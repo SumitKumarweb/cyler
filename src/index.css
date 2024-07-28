@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+#canvas, canvas {
+  width: 300px;
+  height: 300px;
+}
+
+.crt {
+  letter-spacing: 1px;
+  font-family: 'VT323', monospace;
+  color: #95e208;
+
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #22ff22, 0 0 5px #aaffaa;
+  font-size: 25px;
+}
+
+
+
+.content {
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+
+.foreground, .background {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  opacity: .01;
+}
+
+.layout {
+  font-family: monospace;
+  white-space: pre;
+  display: block;
+}
+
+.loading:after {
+  content: ' .';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: black;
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 black;
+  }
+
+  40% {
+    color: #22ff22;
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 black;
+  }
+
+  60% {
+    text-shadow:
+      .25em 0 0 #22ff22,
+      .5em 0 0 black;
+  }
+
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 #22ff22,
+      .5em 0 0 #22ff22;
+  }
+}

@@ -1,0 +1,86 @@
+body {
+    font-family: sans-serif;
+    background: #153467;
+}
+
+.profile-container {
+    margin: 100px auto;
+    background: #231e39;
+    border-radius: 5px;
+    color: #ccc;
+    width: 400px;
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .75);
+}
+
+.profile {
+    background: url(https://cdn.pixabay.com/photo/2018/09/16/22/08/software-3682509_1280.jpg);
+    height: 160px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile-img {
+    height: 120px;
+    width: 120px;
+    border-radius: 150px;
+    padding: 7px;
+    background: #292343;
+    position:relative;
+    top:100px;
+    left:50px;
+}
+
+.profile-name {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 27px 0 0 120px;
+}
+
+.about {
+    margin: 25px;
+    line-height: 21px;
+}
+
+button {
+    margin-left: 10px 0 40px 0;
+}
+
+.msg-btn, .follow-btn {
+    background: #03bfbc;
+    border: 1px solid #03bfbc;
+    padding: 10px 25px;
+    color: #231e39;
+    border-radius: 3px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.follow-btn{
+    margin-left: 10px;
+    background: transparent;
+    color: #02899c;
+}
+.follow-btn:hover{
+    color: #231e39;
+    background: #03bfbc;
+    transition: .5s;
+}
+.profile-container .socail-media-icons{
+    margin-top: 40px;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.profile-container i:hover{
+    color: #03bfbc;
+}
+.socail-media-icons{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
