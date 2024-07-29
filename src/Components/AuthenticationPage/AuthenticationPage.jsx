@@ -1,17 +1,34 @@
 import React, { useState } from "react";
 import "./AuthenticationPage.css";
+import authService from "../../Appwrite/Auth/Auth";
 
 function AuthenticationPage() {
   const [isAuth, setIsAuth] = useState(true);
   const [authDetails, setAuthDetails] = useState({
     email: "",
     password: "",
-    auth: isAuth,
+    userName: "",
   });
 
-  const accessDetails = () => {
+  const accessDetails = (e) => {
+    e.preventDefault();
+    authService.createAccount(authDetails);
     console.log(authDetails);
   };
+
+  const UserName = () => (
+    <div className="inputBox">
+      <input
+        type="text"
+        required
+        placeholder="User Name"
+        onChange={(e) =>
+          setAuthDetails({ ...authDetails, userName: e.target.value })
+        }
+        value={authDetails.userName}
+      />
+    </div>
+  );
 
   return (
     <div className="main-body">
@@ -22,7 +39,8 @@ function AuthenticationPage() {
         <div className="signin">
           <div className="content">
             <h2>{isAuth ? "Sign In" : "Sign Up"}</h2>
-            <div className="form">
+            <form className="form" onSubmit={accessDetails}>
+              {!isAuth && <UserName />}
               <div className="inputBox">
                 <input
                   type="text"
@@ -52,13 +70,9 @@ function AuthenticationPage() {
                 </a>
               </div>
               <div className="inputBox">
-                <input
-                  onClick={() => accessDetails()}
-                  type="submit"
-                  value={isAuth ? "Sign In" : "Sign Up"}
-                />
+                <input type="submit" value={isAuth ? "Sign In" : "Sign Up"} />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -114,7 +114,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
- 
   return <>{loading ? <Loader /> : <RouterProvider router={router} />}</>;
 }
 
