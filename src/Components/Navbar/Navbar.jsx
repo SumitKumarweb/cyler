@@ -78,7 +78,11 @@ function ResponsiveAppBar({ isLogin, toggleLogin }) {
         </Menu>
       </Box>
     ) : (
-      <Button color="inherit" onClick={toggleLogin}>Login</Button>
+      <Link to="/AuthenticationPage" style={{ textDecoration: "none" }}>
+        <Button color="inherit" onClick={toggleLogin}>
+          Login
+        </Button>
+      </Link>
     );
   };
 
