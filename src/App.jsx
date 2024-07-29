@@ -11,9 +11,10 @@ import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Maintenance from "./Components/Maintenance/Maintenance";
 import Terms from "./Components/TermsAndConditions/Terms";
 import FAQ from "./Components/FAQ/FAQ";
+import AuthenticationPage from "./Components/AuthenticationPage/AuthenticationPage";
 function App() {
   const [loading, setLoading] = useState(true);
- 
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -84,6 +85,16 @@ function App() {
       ),
     },
     {
+      path: "/AuthenticationPage",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <AuthenticationPage />
+          <Footer />
+        </>
+      ),
+    },
+    {
       path: "/Maintenance",
       element: (
         <>
@@ -103,11 +114,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleLogin = () => {
-    setIsLogin((prev) => !prev); // Toggle login state
-  };
-//   return <div className="text-3xl font-bold underline">Hello</div>;
-    return <>{loading ? <Loader /> : <RouterProvider router={router} />}</>;
+ 
+  return <>{loading ? <Loader /> : <RouterProvider router={router} />}</>;
 }
 
 export default App;
