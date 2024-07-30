@@ -5,6 +5,7 @@ import { Client, Account, ID } from "appwrite";
 
 function AuthenticationPage() {
   const [isAuth, setIsAuth] = useState(true);
+  const [signSuccess, setSignSuccess] = useState();
   const [authDetails, setAuthDetails] = useState({
     email: "",
     password: "",
@@ -29,7 +30,6 @@ function AuthenticationPage() {
           );
           console.log("Sign In successful:", response);
         } else {
-          // Sign Up
           const response = await account.create(
             ID.unique(),
             authDetails.email,

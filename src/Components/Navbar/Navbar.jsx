@@ -18,7 +18,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 const pages = ["Products", "Course", "Software"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar({ isLogin, toggleLogin }) {
+function ResponsiveAppBar({ isLogin = true, toggleLogin }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -51,7 +51,7 @@ function ResponsiveAppBar({ isLogin, toggleLogin }) {
       <Box sx={{ flexGrow: 0 }}>
         <Tooltip title="Open settings">
           <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            <Avatar alt="R" src="/static/ images/avatar/2.jpg" />
           </IconButton>
         </Tooltip>
         <Menu
@@ -78,7 +78,7 @@ function ResponsiveAppBar({ isLogin, toggleLogin }) {
         </Menu>
       </Box>
     ) : (
-      <Link to="/AuthenticationPage"  >
+      <Link to="/AuthenticationPage">
         <Button color="inherit" onClick={toggleLogin}>
           Login
         </Button>
