@@ -11,6 +11,7 @@ import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Maintenance from "./Components/Maintenance/Maintenance";
 import Terms from "./Components/TermsAndConditions/Terms";
 import FAQ from "./Components/FAQ/FAQ";
+ 
 import AuthenticationPage from "./Components/AuthenticationPage/AuthenticationPage";
 function App() {
   const [loading, setLoading] = useState(true);
@@ -113,7 +114,7 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
+  // return <AppSample/>
   return <>{loading ? <Loader /> : <RouterProvider router={router} />}</>;
 }
 
